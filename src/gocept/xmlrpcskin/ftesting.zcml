@@ -1,34 +1,46 @@
 <configure
-   xmlns="http://namespaces.zope.org/zope"
-   i18n_domain="zope"
-   >
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="zope"
+    >
 
-  <!-- typical functional testing security setup -->
+  <!-- Zope server -->
+  <include package="zope.component" file="meta.zcml" />
+  <include package="zope.app.publication" file="meta.zcml" />
+  <include package="zope.publisher" file="meta.zcml" />
+  <include package="zope.security" file="meta.zcml" />
   <include package="zope.securitypolicy" file="meta.zcml"/>
+
+  <include package="zope.component" />
+  <include package="zope.location" />
+  <include package="zope.traversing" />
+  <include package="zope.traversing.browser"/>
+
+  <include package="zope.app.appsetup" />
+  <include package="zope.container" />
+  <include package="zope.site" />
+  <include package="zope.annotation"/>
+
+  <include package="zope.browserpage" />
+  <include package="zope.publisher"/>
+  <include package="zope.app.publication" />
+  <include package="zope.app.publisher.browser" />
+
+  <!-- minimal all-public security setup -->
+  <include package="zope.principalregistry" />
+  <include package="zope.security" />
   <include package="zope.securitypolicy" />
-  <include package="zope.app.authentication"/>
   <securityPolicy
       component="zope.securitypolicy.zopepolicy.ZopeSecurityPolicy"
       />
 
-  <unauthenticatedPrincipal
-      id="zope.anybody"
-      title="Unauthenticated User"
-      />
-  <grant
-      permission="zope.View"
-      principal="zope.anybody"
-      />
+  <role id="zope.Anonymous" title="Everybody"
+        description="All users have this role implicitly" />
+  <grant permission="zope.View"
+         role="zope.Anonymous" />
 
-  <principal
-      id="zope.mgr"
-      title="Manager"
-      login="mgr"
-      password="mgrpw"
-      />
+  <!-- ourselves -->
 
-  <role id="zope.Manager" title="Site Manager" />
-  <grantAll role="zope.Manager" />
-  <grant role="zope.Manager" principal="zope.mgr" />
+  <include package="gocept.xmlrpcskin" file="meta.zcml" />
+  <include package="gocept.xmlrpcskin" />
 
 </configure>

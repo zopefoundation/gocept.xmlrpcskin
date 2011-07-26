@@ -1,0 +1,14 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    >
+
+  <include package="zope.browserpage" file="meta.zcml" />
+
+  <browser:page
+      for="*"
+      name="index.html"
+      class=".view.Index"
+      permission="zope.Public"
+      />
+</configure>

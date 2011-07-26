@@ -1,11 +1,14 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
-    xmlns:browser="http://namespaces.zope.org/browser"
     >
 
-  <browser:view
-      name="skin" type="zope.publisher.interfaces.xmlrpc.IXMLRPCRequest"
-      provides="zope.traversing.interfaces.ITraversable" for="*"
+  <include package="zope.component" file="meta.zcml" />
+
+  <adapter
+      name="skin"
+      for="* zope.publisher.interfaces.xmlrpc.IXMLRPCRequest"
+      provides="zope.traversing.interfaces.ITraversable"
       factory=".traverser.xmlrpc_skin"
       />
+
 </configure>
