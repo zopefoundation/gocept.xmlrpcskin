@@ -36,9 +36,15 @@ directive for XML-RPC views that supports a ``layer`` parameter.""",
     namespace_packages=['gocept'],
     install_requires=[
         'setuptools',
-        'zope.component',
+        'zope.app.publisher',
+        'zope.component[zcml]',
+        'zope.configuration',
         'zope.interface',
+        'zope.publisher>=3.6.0',
+        'zope.security',
+        'zope.traversing',
     ],
     extras_require=dict(test=[
+        'zope.testbrowser',
     ]),
 )
