@@ -45,6 +45,7 @@ directive for XML-RPC views that supports a ``layer`` parameter.""",
         'zope.traversing',
     ],
     extras_require=dict(test=[
+        'unittest2',
         'zope.app.appsetup',
         'zope.app.publication',
         'zope.app.testing',

@@ -12,4 +12,12 @@ subsequently have been removed) of the following packages
 - zope.traversing (removed in r82482)
 - zope.publisher (removed in r82493)
 
-XXX document usage
+
+Usage
+=====
+
+Include the necessary ZCML::
+
+    <include package="gocept.xmlrpcskin" file="meta.zcml" />
+    <include package="gocept.xmlrpcskin" />
+

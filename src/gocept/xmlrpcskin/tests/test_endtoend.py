@@ -14,6 +14,7 @@
 
 import gocept.xmlrpcskin.testing
 import gocept.xmlrpcskin.tests.fixture
+import zope.app.testing.xmlrpc
 import zope.configuration.xmlconfig
 import zope.testbrowser.testing
 
@@ -24,7 +25,12 @@ class SkinTest(gocept.xmlrpcskin.testing.TestCase):
         zope.configuration.xmlconfig.file(
             'configure.zcml', gocept.xmlrpcskin.tests.fixture)
 
-        b = zope.testbrowser.testing.Browser()
-        b.handleErrors = False
-        b.open('http://localhost/index.html')
-        self.assertEqual('Hello, world!', b.contents)
+        all = zope.app.testing.xmlrpc.ServerProxy('http://localhost/')
+        foo = zope.app.testing.xmlrpc.ServerProxy(
+            'http://localhost/++skin++foo')
+
+        self.assertEqual(dict(returncode=1), all.all_layers())
+        self.assertEqual(dict(returncode=1), foo.all_layers())
+        self.assertEqual(dict(returncode=2), foo.foo_layer())
+        self.assertRaisesRegexp(
+            Exception, 'NotFound.*foo_layer', all.foo_layer)

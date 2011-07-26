@@ -12,17 +12,8 @@
 #
 ##############################################################################
 
-import pkg_resources
-import unittest2
-import zope.app.testing.functional
+import zope.publisher.interfaces.xmlrpc
 
 
-layer = zope.app.testing.functional.ZCMLLayer(
-    pkg_resources.resource_filename(__name__, 'ftesting.zcml'),
-    __name__, 'layer', allow_teardown=True)
-
-
-class TestCase(zope.app.testing.functional.FunctionalTestCase,
-               unittest2.TestCase):
-
-    layer = layer
+class IFooLayer(zope.publisher.interfaces.xmlrpc.IXMLRPCRequest):
+    pass

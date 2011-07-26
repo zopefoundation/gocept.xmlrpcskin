@@ -12,8 +12,13 @@
 #
 ##############################################################################
 
+import zope.app.publisher.xmlrpc
 
-class Index(object):
 
-    def __call__(self):
-        return 'Hello, world!'
+class Example(zope.app.publisher.xmlrpc.XMLRPCView):
+
+    def all_layers(self):
+        return dict(returncode=1)
+
+    def foo_layer(self):
+        return dict(returncode=2)

@@ -38,9 +38,4 @@
   <grant permission="zope.View"
          role="zope.Anonymous" />
 
-  <!-- ourselves -->
-
-  <include package="gocept.xmlrpcskin" file="meta.zcml" />
-  <include package="gocept.xmlrpcskin" />
-
 </configure>
