@@ -17,7 +17,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='gocept.xmlrpcskin',
-    version='1.0',
+    version='1.1dev',
     author='gocept',
     author_email='mail@gocept.com',
     url='http://pypi.python.org/pypi/gocept.xmlrpcskin',
