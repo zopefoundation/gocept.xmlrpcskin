@@ -11,7 +11,7 @@ matrix:
       python: 3.7
       before_install:
       install: pip install tox
-      script: tox -e flake8
+      script: tox -e linting
       after_success:
 
 install:
