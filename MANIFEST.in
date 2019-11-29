@@ -1,0 +1,6 @@
+include *.py
+include *.rst
+include .coveragerc
+include buildout.cfg
+include tox.ini
+recursive-include src *.zcml
