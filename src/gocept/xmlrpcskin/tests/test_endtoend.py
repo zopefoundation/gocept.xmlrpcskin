@@ -20,6 +20,7 @@ import zope.testbrowser.testing
 
 
 class SkinTest(gocept.xmlrpcskin.testing.TestCase):
+    """Testing the registration end to end."""
 
     def test_view_is_registered_only_for_layer(self):
         zope.configuration.xmlconfig.file(
@@ -32,5 +33,5 @@ class SkinTest(gocept.xmlrpcskin.testing.TestCase):
         self.assertEqual(dict(returncode=1), all.all_layers())
         self.assertEqual(dict(returncode=1), foo.all_layers())
         self.assertEqual(dict(returncode=2), foo.foo_layer())
-        self.assertRaisesRegexp(
+        self.assertRaisesRegex(
             Exception, 'NotFound.*foo_layer', all.foo_layer)

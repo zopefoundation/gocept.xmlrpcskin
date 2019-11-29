@@ -1,0 +1,12 @@
+*.egg-info
+*.pyc
+*.swp
+*~
+.DS_Store
+.cache
+.coverage
+.coverage.*
+.pytest_cache
+.tox/
+test-report
+develop-eggs

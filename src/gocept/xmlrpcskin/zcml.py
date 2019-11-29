@@ -25,14 +25,14 @@ import zope.configuration.fields
 
 
 class IXMLRPCViewDirective(
-    zope.app.publisher.xmlrpc.metadirectives.IViewDirective):
+        zope.app.publisher.xmlrpc.metadirectives.IViewDirective):
 
     layer = zope.configuration.fields.GlobalInterface(
         title=u"The layer the view is declared for",
         description=u"The default layer for which the default view is "
                     u"applicable. By default it is applied to all layers.",
         required=False
-        )
+    )
 
 
 def xmlrpc_view(_context, for_=None, interface=None, methods=None,
@@ -59,7 +59,7 @@ def xmlrpc_view(_context, for_=None, interface=None, methods=None,
                 discriminator=None,
                 callable=provideInterface,
                 args=('', for_)
-                )
+            )
 
     # Make sure that the class inherits MethodPublisher, so that the views
     # have a location
@@ -102,14 +102,14 @@ def xmlrpc_view(_context, for_=None, interface=None, methods=None,
             args=('registerAdapter',
                   class_, (for_, layer), Interface, name,
                   _context.info)
-            )
+        )
     else:
         if permission:
             checker = Checker({'__call__': permission})
         else:
             raise ConfigurationError(
-              "XML/RPC view has neither a name nor a permission. "
-              "You have to specify at least one of the two.")
+                "XML/RPC view has neither a name nor a permission. "
+                "You have to specify at least one of the two.")
 
         for name in require:
             # create a new callable class with a security checker;
@@ -122,7 +122,7 @@ def xmlrpc_view(_context, for_=None, interface=None, methods=None,
                 args=('registerAdapter',
                       new_class, (for_, layer), Interface, name,
                       _context.info)
-                )
+            )
 
     # Register the used interfaces with the site manager
     if for_ is not None:
@@ -130,4 +130,4 @@ def xmlrpc_view(_context, for_=None, interface=None, methods=None,
             discriminator=None,
             callable=provideInterface,
             args=('', for_)
-            )
+        )

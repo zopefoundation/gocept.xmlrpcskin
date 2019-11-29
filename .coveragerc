@@ -1,0 +1,14 @@
+[run]
+branch = True
+source = gocept.xmlrpcskin
+
+[report]
+precision = 2
+omit =
+    src/gocept/__init__.py
+
+[paths]
+source =
+   src/gocept/xmlrpcskin
+   .tox/*/lib/python*/site-packages/gocept/xmlrpcskin
+   .tox/pypy*/site-packages/gocept/xmlrpcskin
