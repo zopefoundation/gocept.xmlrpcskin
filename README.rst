@@ -2,6 +2,19 @@
 gocept.xmlrpcskin
 =================
 
+
+.. image:: https://img.shields.io/pypi/v/gocept.xmlrpcskin.svg
+    :target: https://pypi.org/project/gocept.xmlrpcskin/
+
+.. image:: https://img.shields.io/pypi/pyversions/gocept.xmlrpcskin.svg
+    :target: https://pypi.org/project/gocept.xmlrpcskin/
+
+.. image:: https://travis-ci.com/zopefoundation/gocept.xmlrpcskin.svg?branch=master
+    :target: https://travis-ci.com/zopefoundation/gocept.xmlrpcskin
+
+.. image:: https://coveralls.io/repos/github/zopefoundation/gocept.xmlrpcskin/badge.svg?branch=master
+    :target: https://coveralls.io/github/zopefoundation/gocept.xmlrpcskin?branch=master
+
 This package is an extension to the Zope Publisher that provides a ZCML
 directive for XML-RPC views that supports a ``layer`` parameter.
 
