@@ -17,7 +17,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='gocept.xmlrpcskin',
-    version='1.1',
+    version='1.2.dev0',
     author='gocept',
     author_email='mail@gocept.com',
     url='https://github.com/zopefoundation/gocept.xmlrpcskin',
