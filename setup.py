@@ -20,9 +20,9 @@ setup(
     version='1.1dev',
     author='gocept',
     author_email='mail@gocept.com',
-    url='http://pypi.python.org/pypi/gocept.xmlrpcskin',
+    url='https://github.com/zopefoundation/gocept.xmlrpcskin',
     description="""\
-An extension to ``zope.publisher`` that provides a ZCML
+An extension to ``zope.publisher`` that provides a ZCML \
 directive for XML-RPC views that supports a ``layer`` parameter.""",
     long_description=(
         open('README.rst').read()
@@ -33,6 +33,7 @@ directive for XML-RPC views that supports a ``layer`` parameter.""",
     include_package_data=True,
     zip_safe=False,
     license='ZPL',
+    keywords='zope2 zope3 xmlrpc zope.publisher',
     classifiers=[
         'License :: OSI Approved',
         'License :: OSI Approved :: Zope Public License',
