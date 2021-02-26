@@ -13,7 +13,7 @@
 ##############################################################################
 
 import pkg_resources
-import unittest2
+import unittest
 import zope.app.testing.functional
 
 
@@ -23,6 +23,6 @@ layer = zope.app.testing.functional.ZCMLLayer(
 
 
 class TestCase(zope.app.testing.functional.FunctionalTestCase,
-               unittest2.TestCase):
+               unittest.TestCase):
 
     layer = layer

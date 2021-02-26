@@ -14,6 +14,7 @@
 
 import gocept.xmlrpcskin.testing
 import gocept.xmlrpcskin.tests.fixture
+import six
 import zope.app.testing.xmlrpc
 import zope.configuration.xmlconfig
 import zope.testbrowser.testing
@@ -33,5 +34,5 @@ class SkinTest(gocept.xmlrpcskin.testing.TestCase):
         self.assertEqual(dict(returncode=1), all.all_layers())
         self.assertEqual(dict(returncode=1), foo.all_layers())
         self.assertEqual(dict(returncode=2), foo.foo_layer())
-        self.assertRaisesRegex(
-            Exception, 'NotFound.*foo_layer', all.foo_layer)
+        six.assertRaisesRegex(
+            self, Exception, 'NotFound.*foo_layer', all.foo_layer)
