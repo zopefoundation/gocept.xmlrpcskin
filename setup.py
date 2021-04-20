@@ -76,7 +76,7 @@ directive for XML-RPC views that supports a ``layer`` parameter.""",
         'zope.location',
         'zope.principalregistry',
         'zope.securitypolicy',
-        'zope.testbrowser[zope-functional-testing]',
+        'zope.testbrowser',
         'zope.testrunner',
     ]),
 )
