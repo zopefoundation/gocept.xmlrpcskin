@@ -5,6 +5,7 @@ CHANGES
 ----------------
 
 - Add support for Python 3.5, 3.6 and 3.9.
+- Fix warning in setup.py.
 
 
 1.1 (2019-12-03)
